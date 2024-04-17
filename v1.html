@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Chart</title>
+  <!-- Include D3.js library -->
+  <link rel="stylesheet" href="v1.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Bigfoot Sighting Analysis</h1>
+    <div class = 'names'>
+      <div class='name', id='a'>Austin</div>
+      <div class='name', id='b'>Vincy</div>
+      <div class='name', id='c'>Charlotte</div>
+      <div class='name', id = 'd'>Tang</div>
+      <div class='name', id='e'>Yuhang</div>
+    </div>
+  </header>
+  
+  <div class="charts">
+    <!--First chart here-->
+    <div class="chart">
+      <!-- Chart description -->
+      <p class="chartDescription">this is pie</p>
+      <!-- Chart container -->
+      <div class="chart-container" id="chartContainer1"></div>
+      <!-- Chart buttons -->
+
+      <div class="chart-buttons">
+        <button id="dataset1">Show season</button>
+        <button id="dataset2">Show sighting class</button>
+      </div>
+    </div>
+    <!--second chart here-->
+    <div class="chart">
+      <p class="chartDescription">Crime Data Visualization</p>
+      <div class="chart-container" id="charlotte"></div>
+    </div>
+
+    <!--third chart here-->
+    <div class="chart">
+      <!-- Chart description -->
+      <p class="chartDescription">this is heatmap</p>
+      <!-- Chart container -->
+      <div class="chart-container" id="heatmap"></div>
+    </div>
+
+    <!-- 4 Chart Container -->
+    <div class="chart">
+      <p class="chartDescription">Crime Data Visualization</p>
+      <div class="chart-container" id="crime"></div>
+    </div>
+  
+    <!--5th-->
+      <div class="chart">
+      <!-- Chart description -->
+      <p class="chartDescription"> this is bar</p>
+      <!-- Chart container -->
+      <div class="chart-container" id="chartContainer4"></div>
+    </div>
+
+  </div>
+  <div class="footer">
+    <div id='space_left'></div>
+    <p id = 'footer_text'>Footer</p>
+    <div id='space_right'></div>
+    <div id = 'logo'> </div>
+  </div>
+  <script src='first_chart.js'></script>
+  <script src='second_chart.js'></script>
+  <script src='third_chart.js'></script>
+  <script src='fourth_chart.js'></script>
+  <script src='fifth_chart.js'></script>
+</body>
+</html>
