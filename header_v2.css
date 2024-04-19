@@ -1,0 +1,372 @@
+:root {
+    --usc-yellow-100:rgb(255,204,0);
+    --usc-red-70:rgb(173, 63, 72);
+    --usc-red-100:rgb(153,27,30);
+    --usc-red-200:rgb(138,24,27);
+    --usc-red-300:rgb(122,22,24);
+    --usc-red-400:rgb(107,19,21);
+    --usc-test:rgb(0,78,255);
+
+}
+
+/* MISC STUFF */
+/* Disabled the edit button because the WYSIWYG destroys content when transcluding the header */
+#tmEdit {
+    display: none!important;
+}
+/* Disables a paragraph that gets injected between the header and navigation by the wiki */
+.airwolf-header + p {
+    display: none;
+}
+
+.navbar #nav-create-page {
+    display: none;
+}
+
+/* TYPOGRAPHY */
+body, p, a, li, h1, h2, h3, h4, h5, h6 {
+    font-family: "Amazon Ember", Helvetica, Arial, sans-serif;
+}
+
+  ,
+#body h1,
+#body h2,
+#body h3,
+#body h4,
+#body h5,
+#body h6 {
+    font-family: "Amazon Ember", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#body p, #body li{
+    font-family: "Amazon Ember", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+li > a{
+    font-family: "Amazon Ember", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+/* WIKI MODS */
+/* ========================================================================== */
+/* Main content column */
+
+
+.airwolf-header {
+    margin: 0 -20px!important;
+    width: auto!important;
+}
+
+/* Breadcrumbs*/
+#hierarchy {
+    /***margin: 0 -20px;***/
+    padding: 10px 20px;
+    border-radius: 0;
+    background-color: var(--awsui-squid-ink);
+    position: relative;
+    z-index: 20;
+    box-shadow: 0 2px 0 2px rgba(0,0,0,.2);
+}
+
+/* Document meta */
+
+.airwolf-navigation ~ *:not(.amazon-wiki-toc) {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* NAVIGATION */
+.airwolf-navigation {
+    z-index: 2;
+    position: relative;
+    top: -45px;
+}
+
+.airwolf-navigation ul {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+.airwolf-navigation ul ul{
+    width: auto;
+    text-align: left;
+}
+.airwolf-navigation li {
+    margin: 0 auto;
+    padding: 0;
+}
+.airwolf-navigation a,
+.airwolf-navigation .nested-menu span {
+    width: 100%;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 5px 10px;
+    color: white;
+    transition: all .4s ease;
+}
+.airwolf-navigation .nested-menu span { cursor: default; }
+.airwolf-navigation ul ul .nested-menu span { color: rgb(213,219,219); }
+.airwolf-navigation ul ul a { color: white; }
+.airwolf-navigation a:hover,
+.airwolf-navigation .nested-menu span:hover {
+    text-decoration: none;
+    background-color: var(--usc-red-100);
+    color: rgb(255,255,255);
+    opacity: 0.9;
+}
+.airwolf-navigation .nested-menu {
+    position: relative;
+    text-decoration: underline;
+}
+.airwolf-navigation ul ul .nested-menu:hover::after {
+    border-color: transparent transparent transparent rgb(198, 102, 21);
+/*    animation-duration: 1s;
+    animation-name: arrowBounce;
+    animation-iteration-count: infinite;*/
+}
+.airwolf-navigation ul ul .nested-menu::after {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    right: 5px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-color: transparent transparent transparent rgb(234,237,237);
+    transform: translateY(-50%);
+    transition: all .2s ease;
+}
+.airwolf-navigation ul ul .nested-menu {
+    padding-right: 10px;
+}
+
+@keyframes arrowBounce {
+    0% {
+        right: 5px;
+    }
+
+    50% {
+        right: 0;
+    }
+
+    100% {
+        right: 5px;
+    }
+}
+
+/* Menu */
+.airwolf-navigation > ul > li {
+    display: inline-block;
+}
+
+
+/* Submenu */
+.airwolf-navigation > ul > li > ul {
+    background: var(--usc-red-300);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .2s ease;
+}
+.airwolf-navigation > ul > li.nested-menu:hover > ul {
+    opacity: 0.95;
+    pointer-events: auto;
+}
+
+/* Sub Submenu */
+.airwolf-navigation > ul > li > ul > li > ul {
+    background: var(--usc-red-70);
+    position: absolute;
+    min-width: 150px;
+    top: 0;
+    left: calc(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .2s ease;
+}
+.airwolf-navigation > ul > li > ul > li.nested-menu:hover > ul {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Sub Sub Submenu */
+.airwolf-navigation > ul > li > ul > li > ul > li > ul {
+    background: var(--usc-red-100);
+    position: absolute;
+    min-width: 150px;
+    top: 0;
+    left: calc(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .2s ease;
+}
+.airwolf-navigation > ul > li > ul > li > ul> li.nested-menu:hover > ul {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* HEADER */
+.airwolf-header {
+    top: 0; 
+    margin: 0 auto 0 auto;
+    background-color: var(--usc-red-100);
+    position: relative;
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+}
+.airwolf-header::after {
+    z-index: 1;
+    box-shadow: 0 0 240px 240px rgba(0,0,0,.5);
+    content: '';
+    background: red;
+    width: 340px;
+    height: 340px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+.airwolf-header-title {
+    z-index: 2;
+    font-family: "Amazon Ember", Helvetica, Arial, sans-serif;
+    letter-spacing: 2px;
+    position: absolute;
+    color: rgb(250,250,250);
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+.airwolf-header-title::after {
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: var(--usc-red-70);
+}
+.airwolf-header-subtitle {
+    z-index: 2;
+    font-family: "Amazon Ember", Helvetica, Arial, sans-serif;
+    letter-spacing: 2px;
+    position: absolute;
+    color: rgb(250,250,250);
+    top: 99px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.airwolf-header-stripe-shine {
+    position: absolute;
+    content: '';
+    background: white;
+    width: 100%;
+    height: 20px;
+    transform: rotate(-70deg);
+
+    animation-duration: 6s;
+    animation-name: shine;
+    animation-iteration-count: infinite;
+}
+.airwolf-header-stripe-shine.two {
+    height: 10px;
+    animation-duration: 3s;
+}
+
+.airwolf-header-stripe-fade {
+    display: block;
+    width: 1000px;
+    height: 50px;
+    background: var(--usc-yellow-100);
+
+    margin-left: -50px;
+    margin-top: -50px;
+
+    transform: rotate(-20deg);
+    animation-duration: 6s;
+    animation-name: fadeInOut;
+    animation-iteration-count: infinite;
+
+
+}
+.airwolf-header-stripe-fade.one {
+    background: rgb(255, 204, 0);
+    margin-bottom: 10px;
+    animation-duration: 6s;
+}
+.airwolf-header-stripe-fade.two {
+    background: rgb(255, 204, 0);
+    margin-bottom: 75px;
+    animation-duration: 17s;
+}
+.airwolf-header-stripe-fade.three {
+    background: rgb(255, 204, 0);
+    margin-bottom: 10px;
+    animation-duration: 7s;
+}
+.airwolf-header-stripe-fade.four {
+    animation-name: fadeInOutDark;
+    background: rgb(255, 204, 0);
+    margin-bottom: 30px;
+    animation-duration: 9s;
+}
+.airwolf-header-stripe-fade.five {
+    background: rgb(255, 204, 0);
+    margin-bottom: 150px;
+    animation-duration: 13s;
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(-90deg);
+        left: -100%;
+        background: rgba(255,255,255,0);
+    }
+
+    15% {
+        transform: rotate(-70deg);
+    }
+
+    25% {
+        left: 50%;
+        background: rgba(255,255,255,0.05);
+    }
+
+    100% {
+        transform: rotate(-90deg);
+        left: 150%;
+        background: rgba(255,255,255,0);
+    }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 0.9; background-color: var(--usc-yellow); }
+    100% { opacity: 0; }
+}
+
+@keyframes fadeInOutDark {
+    0% { opacity: 0; }
+    50% { opacity: .5; background-color: var(--usc-red); }
+    100% { opacity: 0; }
+}

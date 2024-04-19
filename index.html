@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Chart</title>
+  <!-- Include D3.js library -->
+  <link rel="stylesheet" type="text/css" href="v1.css">
+  <link rel="stylesheet" type="text/css" href="v2.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <!--<link rel="stylesheet" type="text/css" href="v2_tok.css">-->
+  <!-- > Header<!-->
+    <div>
+      <div class="airwolf-header">
+        <span class="airwolf-header-stripe-shine one"></span>
+        <span class="airwolf-header-stripe-shine two"></span>
+        <span class="airwolf-header-stripe-fade one"></span>
+        <span class="airwolf-header-stripe-fade two"></span>
+        <span class="airwolf-header-stripe-fade three"></span>
+        <span class="airwolf-header-stripe-fade four"></span>
+        <span class="airwolf-header-stripe-fade five"></span>
+        <span class="airwolf-header-title one">USC Bigfoot Study</span>
+        <span class="airwolf-header-subtitle">DSCI-550</span>
+      </div>
+
+      <nav class="airwolf-navigation">
+        <ul>
+          <li><a href="https://w.amazon.com/bin/view/GCR_CSM/Home/">Home</a></li>
+          <li class="nested-menu">
+            <span>Event Calendar</span>
+            <ul>
+              <li><a href="https://w.amazon.com/bin/view/GCR_CSM/Event/">Overview</a></li>
+              <li><a href="https://w.amazon.com/bin/view/GCR_CSM/PastEvent/">Past Event</a></li>
+              <li><a href="https://w.amazon.com/bin/view/GCR_CSM/Plan/">Plan</a></li>
+            </ul>
+          </li>
+          <li class="nested-menu">
+            <span>Team</span>
+            <ul>
+              <li style="cursor: pointer;"><a>Austin</a></li>
+              <li style="cursor: pointer;"><a>Vincy</a></li>
+              <li style="cursor: pointer;"><a>Charlotte</a></li>
+              <li style="cursor: pointer;"><a>Yuhang</a></li>
+              <li style="cursor: pointer;"><a>Tang Chen</a></li>
+            </ul>
+          </li>
+          <li class="nested-menu">
+            <span>Contact</span>
+            <ul>
+              <li><a style="cursor: pointer;">USC Viterbi</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="charts">
+      <!--First chart here-->
+      <div class="chart">
+        <!-- Chart description -->
+        <p class="chartDescription">this is pie</p>
+        <!-- Chart container -->
+        <div class="chart-container" id="chartContainer1"></div>
+        <!-- Chart buttons -->
+
+        <div class="chart-buttons">
+          <button id="dataset1">Show season</button>
+          <button id="dataset2">Show sighting class</button>
+        </div>
+      </div>
+      <!--second chart here-->
+      <div class="chart">
+        <p class="chartDescription">Crime Data Visualization</p>
+        <div class="chart-container" id="charlotte"></div>
+      </div>
+
+      <!--third chart here-->
+      <div class="chart">
+        <!-- Chart description -->
+        <p class="chartDescription">this is heatmap</p>
+        <!-- Chart container -->
+        <div class="chart-container" id="heatmap"></div>
+      </div>
+
+      <!-- 4 Chart Container -->
+      <div class="chart">
+        <p class="chartDescription">Crime Data Visualization</p>
+        <div class="chart-container" id="crime"></div>
+      </div>
+
+      <!--5th-->
+      <div class="chart">
+        <!-- Chart description -->
+        <p class="chartDescription"> this is bar</p>
+        <!-- Chart container -->
+        <div class="chart-container" id="chartContainer4"></div>
+      </div>
+    </div>
+    
+    <div class ="footer">
+      <div id='space_left'></div>
+      <div><p id = 'footer_text'>Team 8</p></div>
+      <div><img src='logo.png'></div>
+    </div>
+    
+    <script src='first_chart.js'></script>
+    <script src='second_chart.js'></script>
+    <script src='third_chart.js'></script>
+    <script src='fourth_chart.js'></script>
+    <script src='fifth_chart.js'></script>
+  </body>
+  </html>
