@@ -3,11 +3,11 @@
         const chartContainer = d3.select("#charlotte"); // Selecting the chart container
         const containerRect = chartContainer.node().getBoundingClientRect();
         const width = containerRect.width - 100;
-        const height = containerRect.height - 120; // Adjust height to fit within container
+        const height = containerRect.height - 80; // Adjust height to fit within container
 
         const svg = chartContainer.append("svg") // Appending SVG to the chart container
         .attr("width", width + 60)
-        .attr("height", height + 20)
+        .attr("height", height + 60)
         .append("g")
         .attr("transform", `translate(50,30)`);
 
