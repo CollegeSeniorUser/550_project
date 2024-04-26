@@ -21,6 +21,14 @@ document.addEventListener("DOMContentLoaded", function() {
         .attr("width", "100%") // Set the width to 100% to make it responsive
         .attr("height", "100%"); // Set the height to 100% to make it responsive
 
+            // Append title to the SVG container
+    svg.append("text")
+        .attr("x", 0)
+        .attr("y", -height / 2 - 20) // Adjust position based on chart size
+        .attr("text-anchor", "middle")
+        .style("font-size", "20px")
+        .text("Sighting by Season/Class");
+
         const color = d3.scaleOrdinal(d3.schemeCategory10);
         const pie = d3.pie().value(d => d[1]);
         const arc = d3.arc().innerRadius(0).outerRadius(Math.min(width, height) / 2 - 10);
