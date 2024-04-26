@@ -42,11 +42,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const x = d3.scaleLinear()
             .domain([0, d3.max(data, d => d['State Population'])])
-            .range([0, width - margin.left - margin.right]);
+            .range([0, width]);
 
         const y = d3.scaleLinear()
             .domain([0, d3.max(Object.values(countsPerMillion))])
-            .range([height - margin.top - margin.bottom, 0]);
+            .range([height, 0]);
 
         const line = d3.line()
             .x(d => x(d.population))
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         g.append("g")
-            .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
+            .attr("transform", `translate(0,${height})`)
             .call(d3.axisBottom(x).tickFormat(d3.format(".0s")));
 
         g.append("g")
