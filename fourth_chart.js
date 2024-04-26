@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+ document.addEventListener("DOMContentLoaded", function() {
     d3.json('fourth_data.json').then(function(rawData) {
         const chartContainer = d3.select("#charlotte"); // Selecting the chart container
         const containerRect = chartContainer.node().getBoundingClientRect();

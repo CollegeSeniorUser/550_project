@@ -34,6 +34,7 @@
 }
 
 .chart-container {
+  padding: 10px;
   width: 100%;
   height: 400px; /* Fixed height, can be made responsive */
 }
@@ -69,8 +70,11 @@
 }
 
 /* Button styles */
+.chart-buttons{
+  padding-top: 10px;
+}
 button {
-  background-color: #990000;
+  background-color: var(--usc-red-100);
   color: white;
   padding: 15px 20px;
   margin: 10px;
@@ -82,8 +86,9 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: var(--usc-yellow-100);
 }
+
 .footer {
   padding: 0; /* Remove default padding */
   margin: 0; /* Remove default margin */
