@@ -1,4 +1,3 @@
-
 // Embedding JSON data directly into the script
 const jsonData = [
     {"Decade": 1870, "Class A": 1.0, "Class B": 0.0, "Class C": 0.0},
@@ -16,7 +15,7 @@ const jsonData = [
     {"Decade": 2000, "Class A": 0.4382165605, "Class B": 0.5611464968, "Class C": 0.0006369427},
     {"Decade": 2010, "Class A": 0.3618042226, "Class B": 0.6381957774, "Class C": 0.0},
     {"Decade": 2020, "Class A": 0.3225806452, "Class B": 0.6774193548, "Class C": 0.0}
-    ];
+];
 
 // Using the embedded data directly
 const data = jsonData;
@@ -43,6 +42,7 @@ const x = d3.scaleBand()
 .domain(myGroups)
 .padding(0.05);
 svg.append("g")
+.attr("class", "x-axis")
 .attr("transform", `translate(0, ${height})`)
 .call(d3.axisBottom(x).tickSize(0))
 .select(".domain").remove();
@@ -53,6 +53,7 @@ const y = d3.scaleBand()
 .domain(myVars)
 .padding(0.05);
 svg.append("g")
+.attr("class", "y-axis")
 .call(d3.axisLeft(y));
 
 // Build color scale - from red to blue
@@ -91,3 +92,45 @@ const createSquaresAndText = (className) => {
 createSquaresAndText("Class A");
 createSquaresAndText("Class B");
 createSquaresAndText("Class C");
+
+// Update the SVG dimensions based on the container size
+const updateDimensions = () => {
+    const chartContainer = document.querySelector(".chart-container");
+    const containerWidth = chartContainer.offsetWidth;
+    const containerHeight = chartContainer.offsetHeight;
+
+    // Update the SVG width and height
+    svg.attr("width", containerWidth)
+        .attr("height", containerHeight);
+
+    // Update the scales
+    x.range([0, containerWidth - margin.left - margin.right]);
+    y.range([containerHeight - margin.top - margin.bottom, 0]);
+
+    // Update the X axis
+    svg.select(".x-axis")
+        .attr("transform", `translate(0, ${containerHeight - margin.bottom})`)
+        .call(d3.axisBottom(x).tickSize(0))
+        .select(".domain").remove();
+
+    // Update the Y axis
+    svg.select(".y-axis")
+        .call(d3.axisLeft(y));
+
+    // Update the heatmap squares and text
+    ["Class A", "Class B", "Class C"].forEach(className => {
+        svg.selectAll(`.${className}-cell`)
+            .attr("x", d => x(className))
+            .attr("y", d => y(d.Decade.toString()))
+            .attr("width", x.bandwidth())
+            .attr("height", y.bandwidth());
+
+        svg.selectAll(`.${className}-text`)
+            .attr("x", d => x(className) + x.bandwidth() / 2)
+            .attr("y", d => y(d.Decade.toString()) + y.bandwidth() / 2);
+    });
+};
+
+// Call the updateDimensions function initially and on window resize
+updateDimensions();
+window.addEventListener("resize", updateDimensions);
