@@ -5,141 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Chart</title>
   <!-- Include D3.js library -->
-  <!--<link rel="stylesheet" type="text/css" href="body_v2.css">-->
   <link rel="stylesheet" type="text/css" href="header_v2.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <style>  :root {
-    --usc-yellow-100:rgb(255,204,0);
-    --usc-red-70:rgb(173, 63, 72);
-    --usc-red-100:rgb(153,27,30);
-    --usc-red-200:rgb(138,24,27);
-    --usc-red-300:rgb(122,22,24);
-    --usc-red-400:rgb(107,19,21);
-    --usc-test:rgb(0,78,255);
-
-}
-  /* Global styles */
-  body {
-    background-color: #F5F5DC;
-    font-family: Arial, sans-serif;
-    margin: 0;
-  }
-
-
-
-/* Chart container adjustments for responsiveness */
-.charts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 20px;
-}
-
-.chart {
-  flex: 0 1 48%; /* Allows for 2 charts per row, with a little space between */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px; /* Space between rows of charts */
-  background: #fff;
-  padding: 10px;
-  justify-content: center;
-  width: 900px;
-  height: auto;
-}
-
-.chart-container {
-  position: relative; /* Position relative to the parent .chart */
-  height: 600px; /* Fixed height, can be made responsive */
-  padding: 10px;
-  margin: 5px;
-  max-width: 900px; /* Ensure it doesn't exceed chart width */
-  width: calc(100% - 40px); /* Adjusted width, 40px less than the chart width */
-  top: 50%; /* Move to the vertical center */
-  left: 50%; /* Move to the horizontal center */
-  transform: translate(-50%, -50%); /* Center the container */
-  align-items: center;
-}
-
-.chart-container svg {
-  display: block;
-  margin: auto;
-}
-
-
-.tooltip {
-  position: absolute;
-  text-align: center;
-  padding: 6px;
-  font: 12px sans-serif;
-  background: white;
-  border-radius: 8px;
-  pointer-events: none;
-  opacity: 0;
-}
-
-/* Names container styles */
-.names {
-  display: flex;
-  justify-content: space-around; /* Spread items horizontally */
-  gap: 20px; /* Adjust the gap between names */
-  margin-top: 20px; /* Add space between header and names */
-}
-
-.name {
-  cursor: pointer;
-  background-color: #FFCC00;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-/* Button styles */
-.chart-buttons {
-  padding-top: 10px;
-  display: flex;
-  justify-content: center; /* Horizontally center the button */
-}
-
-button {
-  background-color: var(--usc-red-100);
-  color: white;
-  padding: 15px 20px;
-  margin: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-  align-items: center;
-}
-
-button:hover {
-  background-color: var(--usc-yellow-100);
-}
-
-.footer {
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-  text-align: center; /* Center align the content */
-  background-image: linear-gradient(90deg, var(--usc-yellow-100) 0%, var(--usc-red-100) 50%, var(--usc-red-100) 100%);
-  color: white;
-  display: grid !important; /* Use grid for layout */
-  grid-template-columns: 33% 33% 33%; /* Define column widths */
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Align items vertically */
-  z-index: 10000; /* Set a z-index if necessary */
-}
-
-#footer_text {
-  /* No need for flex properties */
-}
-
-img {
-  /* No need for flex properties */
-  max-width: 100%; /* Ensure image does not exceed container width */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 10rem;
-}
-</style>
 </head>
 <body>
   <!--<link rel="stylesheet" type="text/css" href="v2_tok.css">-->
@@ -163,11 +30,11 @@ img {
           <li class="nested-menu">
             <span>Team</span>
             <ul>
-              <li style="cursor: pointer;"><a>Austin</a></li>
-              <li style="cursor: pointer;"><a>Vincy</a></li>
-              <li style="cursor: pointer;"><a>Charlotte</a></li>
-              <li style="cursor: pointer;"><a>Yuhang</a></li>
-              <li style="cursor: pointer;"><a>Tang Chen</a></li>
+              <li style="cursor: pointer;"><a>Chuanzhou Zhang</a></li>
+              <li style="cursor: pointer;"><a>Yu Nie</a></li>
+              <li style="cursor: pointer;"><a>Charlotte Kho</a></li>
+              <li style="cursor: pointer;"><a>Yuhang zhang</a></li>
+              <li style="cursor: pointer;"><a>Chen Tang</a></li>
             </ul>
           </li>
           <li class="nested-menu">
@@ -199,21 +66,18 @@ img {
       <!--third chart here-->
       <div class="chart">
         <!-- Chart description -->
-        <p class="chartDescription">this is heatmap</p>
         <!-- Chart container -->
         <div class="chart-container" id="heatmap"></div>
       </div>
 
       <!-- 4 Chart Container -->
       <div class="chart">
-        <p class="chartDescription">Crime Data Visualization</p>
         <div class="chart-container" id="crime"></div>
       </div>
 
       <!--5th-->
       <div class="chart">
         <!-- Chart description -->
-        <p class="chartDescription"> this is bar</p>
         <!-- Chart container -->
         <div class="chart-container" id="chartContainer4"></div>
       </div>
