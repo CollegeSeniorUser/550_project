@@ -11,7 +11,7 @@
         .append("g")
         .attr("transform", `translate(50,30)`);
 
-        const margin = {top: 20, right: 20, bottom: 20, left: 20};
+        const margin = {top: 15, right: 20, bottom: 60, left: 50};
         const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
         let data = rawData.filter(d => d['State Population'].trim() !== "")
