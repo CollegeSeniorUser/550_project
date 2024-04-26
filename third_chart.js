@@ -84,7 +84,7 @@ fetch('third_data.json')
         .attr("y", 0 - (margin.top / 2))
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
-        .text("Crime Data Visualization");
+        .text("Bigfoot sightings vs. Crime Rate by State");
 
     // Add X and Y axes to the svg
         svg.append("g")
