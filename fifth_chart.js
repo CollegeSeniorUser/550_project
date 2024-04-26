@@ -30,13 +30,9 @@ var countsArray4 = Object.keys(counts4).map(function(key) {
   return { group: key, count: counts4[key] };
 });
 
-const chartContainer = d3.select("#chartContainer4");
-const containerWidth = chartContainer.node().offsetWidth;
-const svgWidth4 = containerWidth;
-const svgHeight4 = width / 2;
 // Set dimensions for the SVG and margins for the fourth chart
-//var svgWidth4 = 500;
-//var svgHeight4 = 320; // Set the height directly here
+var svgWidth4 = 500;
+var svgHeight4 = 320; // Set the height directly here
 var margin4 = { top: 60, right: 20, bottom: 90, left: 100 };
 var width4 = svgWidth4 - margin4.left - margin4.right;
 var height4 = svgHeight4 - margin4.top - margin4.bottom;
